@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:raman_lab/home/home_screen.dart';
 import 'package:raman_lab/views/alert_dialog/alert_dialog_screen.dart';
 import 'package:raman_lab/views/bottom_navigationbar/bottom_navigation_bar_screen.dart';
 import 'package:raman_lab/views/bottom_sheet/bottom_sheet_screen.dart';
+import 'package:raman_lab/views/builder/future/future_builder_screen.dart';
+import 'package:raman_lab/views/builder/future/future_builder_screen2.dart';
+import 'package:raman_lab/views/builder/future/future_builder_screen3.dart';
+import 'package:raman_lab/views/builder/stream/stream_builder_screen.dart';
+import 'package:raman_lab/views/builder/stream/stream_builder_screen2.dart';
 import 'package:raman_lab/views/card/card_screen.dart';
 import 'package:raman_lab/views/check_box/check_box_screen.dart';
 import 'package:raman_lab/views/data_sending/send_data_screen.dart';
+import 'package:raman_lab/views/file_access/camera/camera_screen.dart';
+import 'package:raman_lab/views/file_access/gallery/gallery_screen.dart';
 import 'package:raman_lab/views/gride_view/grid_view_builder_screen.dart';
 import 'package:raman_lab/views/gride_view/grid_view_custom_screen.dart';
 import 'package:raman_lab/views/gride_view/grid_view_extent_screen.dart';
@@ -13,8 +21,12 @@ import 'package:raman_lab/views/listview/list_view_builder_screen.dart';
 import 'package:raman_lab/views/listview/list_view_custom_screen.dart';
 import 'package:raman_lab/views/listview/list_view_screen.dart';
 import 'package:raman_lab/views/listview/list_view_seprated_screen.dart';
+import 'package:raman_lab/views/media_query/media_query_screen.dart';
+import 'package:raman_lab/views/navigator/navigator_push_screen.dart';
 import 'package:raman_lab/views/popup_menu_button/popup_menu_button_screen.dart';
+import 'package:raman_lab/views/profile_screen.dart';
 import 'package:raman_lab/views/radio/radio_screen.dart';
+import 'package:raman_lab/views/search_screen.dart';
 import 'package:raman_lab/views/stack/stack_screen.dart';
 import 'package:raman_lab/views/switch_button/switch_screen.dart';
 import 'package:raman_lab/views/tab_bar_view/tab_bar_view_screen.dart';
@@ -30,8 +42,16 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
    return MaterialApp(
      debugShowCheckedModeBanner: false,
-     home: CheckBoxScreen(),
+     // home: NavigatorPushScreen(),
+     initialRoute: '/',
+     routes: {
+       '/':(context)=>GalleryScreen(),
+       '/profile': (context) => ProfileScreen(),
+       '/navigator_push': (context) => NavigatorPushScreen(),
+       '/search': (context) => SearchScreen(),
+     },
    );
+
   }
 
 }
